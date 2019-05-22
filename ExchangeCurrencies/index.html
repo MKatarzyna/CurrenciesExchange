@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Exchange Challenge</title>
+
+    <link rel="stylesheet" href="src/main.css">
+</head>
+
+    <body>
+    <main>
+    </br><h1>Welcome to Exchange Challenge 2019</h1></br>
+        <div id="box">
+        </br><h1>Select exchange currencies</h1>
+            <div id="enterValueBox">
+                <div>
+                    <label>Enter a value: </label>
+                    <input type="number" class="form-control" id="amount"/>
+                </div>  
+                <div>
+                    <label>Real-time exchange rate: </label>
+                    <p>
+                        <span id="resultExchange"></span>
+                    </p>
+                </div>  
+            </div>
+
+            <div class="selectCurrencies">
+                <div>    
+                    <label class="header">From: </label>
+                    <select name="currencyFrom" id="currencyFrom" class="currency-select">
+                        <option></option>
+                    </select>
+                </div>
+                <div>
+                    <label class="header">to: </label>
+                    <select name="currencyTo" id="currencyTo" class="currency-select">
+                        <option></option>
+                    </select>
+                </div>
+                <button class="calculateBtn" onclick="convertCurrency()">Calculate</button>
+                <button class="switchBtn" id="switchBtn" >&#8646;</button>
+            </div>
+
+            <div>
+                <div>
+                    Tu będzie wykres
+                </div>
+                <div>
+                    <label id="historicalLbl" class="header">Historical exchange chart</label>
+                </div>
+            </div>
+            
+        </div>
+        
+
+
+        <footer class="footer container-fluid py-4">
+            <p class="title">&copy; 2019 | Kainos Exchange Challenge.</p>
+            <p>Designed with ♡ by Katarzyna Mural</p>
+        </footer>
+    </main>
+
+
+    <script type="text/javascript" src="src/index.js"></script>
+    </body>
+</html>
