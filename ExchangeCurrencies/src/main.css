@@ -51,6 +51,11 @@ h1, h2, h3, p {
 
 }
 
+.enterResultValue {
+    flex-direction: column;
+    text-align: left;
+}
+
 #enterValueBox {
     justify-content: space-around;
     display: flex;
@@ -77,6 +82,11 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#chartContainer {
+    height: 300px;
+    width: 100%;
 }
 
 footer {

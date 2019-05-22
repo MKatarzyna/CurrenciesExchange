@@ -16,14 +16,22 @@
         <div id="box">
         </br><h1>Select exchange currencies</h1>
             <div id="enterValueBox">
+                <div class="enterResultValue">
+                    <div>
+                        <label>Enter a value: </label>
+                        <input type="number" class="form-control" id="amount"/>
+                    </div> 
+                    <div>
+                        <label>Result exchange: </label>
+                        <p>
+                            <span id="resultExchange"></span>
+                        </p>
+                    </div>  
+                </div>
                 <div>
-                    <label>Enter a value: </label>
-                    <input type="number" class="form-control" id="amount"/>
-                </div>  
-                <div>
-                    <label>Real-time exchange rate: </label>
+                    <label>Real-time exchange rate (for 1 unit): </label>
                     <p>
-                        <span id="resultExchange"></span>
+                        <span id="resultRealTime"></span>
                     </p>
                 </div>  
             </div>
@@ -42,13 +50,11 @@
                     </select>
                 </div>
                 <button class="calculateBtn" onclick="convertCurrency()">Calculate</button>
-                <button class="switchBtn" id="switchBtn" >&#8646;</button>
+                <button type="button" onclick="swapSelectedIndexBtn('select[name=\'currencyFrom\']', 'select[name=\'currencyTo\']')" >&#8646;</button>
             </div>
 
             <div>
-                <div>
-                    Tu będzie wykres
-                </div>
+                <div class="chart" id="chartContainer"></div>
                 <div>
                     <label id="historicalLbl" class="header">Historical exchange chart</label>
                 </div>
@@ -66,5 +72,8 @@
 
 
     <script type="text/javascript" src="src/index.js"></script>
+    <script type="text/javascript" src="src/chart.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     </body>
 </html>

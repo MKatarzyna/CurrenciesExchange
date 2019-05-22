@@ -10,6 +10,8 @@
   "author": "Katarzyna Mural",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "chart.js": "^2.8.0",
+    "jquery": "^3.4.1",
+    "save": "^2.4.0"
   }
 }
