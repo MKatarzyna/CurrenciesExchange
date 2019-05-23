@@ -18,20 +18,25 @@
             <div id="enterValueBox">
                 <div class="enterResultValue">
                     <div>
-                        <label>Enter a value: </label>
-                        <input type="number" class="form-control" id="amount"/>
+                        <label>Enter a value(From): </label>
+                        <input type="number" class="form-control" id="amount" min="0"/>
+                        <button class="btn calculate-btn" onclick="exchangeCurrency()">Calculate</button>
+                        
                     </div> 
-                    <div>
+                    <div class="result">
                         <label>Result exchange: </label>
                         <p>
-                            <span id="resultExchange"></span>
+                            <span class="given-amount"></span> 
+                            <span class="base-currency"></span>
+                            <span class="second-currency"></span>
+                            <span class="result-exchange"></span> 
                         </p>
                     </div>  
                 </div>
                 <div>
                     <label>Real-time exchange rate (for 1 unit): </label>
                     <p>
-                        <span id="resultRealTime"></span>
+                        <input type="number" id="resultRealTime" disabled="disabled"/>
                     </p>
                 </div>  
             </div>
@@ -49,8 +54,8 @@
                         <option></option>
                     </select>
                 </div>
-                <button class="calculateBtn" onclick="convertCurrency()">Calculate</button>
-                <button type="button" onclick="swapSelectedIndexBtn('select[name=\'currencyFrom\']', 'select[name=\'currencyTo\']')" >&#8646;</button>
+                    <button class="calculateBtn" onclick="convertCurrency()">Real-time</button>
+                    <button type="button" onclick="swapSelectedIndexBtn('select[name=\'currencyFrom\']', 'select[name=\'currencyTo\']')" >&#8646;</button>
             </div>
 
             <div>

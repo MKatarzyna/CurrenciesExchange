@@ -43,6 +43,7 @@ const populateCurrencySelect = (currencies) => {
     // })
 }
 
+
 const convertCurrency = async () => {
     var amountInput = document.getElementById('amount').value;
     // var resultLabel = document.getElementById('resultRealTime');
@@ -57,10 +58,18 @@ const convertCurrency = async () => {
     console.log(request);
 
     const result = await fetch('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=' + CurrencyInputFrom + '&to_currency=' + CurrencyInputTo + '&apikey=EQGG2IE4E1FDHPS6').then(data => data.json());
+    console.log(result);
+
+    if(result == 'Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for FX_INTRADAY.') {
+        window.alert("Invalid API call.");
+    } else if (result == 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.') {
+        window.alert("5 calls per minute");
+    }
+
     var exchangeValue = result['Realtime Currency Exchange Rate']['5. Exchange Rate'];
     console.log(exchangeValue);
 
-    document.getElementById('resultRealTime').innerHTML = exchangeValue;
+    document.getElementById('resultRealTime').value = exchangeValue;
     // resultLabel = exchangeValue;
 
     // [""Realtime Currency Exchange Rate""][""5. Exchange Rate""]
@@ -74,6 +83,43 @@ const swapSelectedIndexBtn = (currencyFrom, currencyTo) => {
     var indexTo = document.getElementById('currencyTo').selectedIndex;
     document.getElementById('currencyFrom').selectedIndex = indexTo;
     document.getElementById('currencyTo').selectedIndex = indexFrom;
+}
+
+
+function exchangeCurrency(event) {
+
+    // event.preventDefault();
+
+    var showAmount = document.querySelector('.given-amount');
+    var showBase = document.querySelector('.base-currency');
+    var showSecond = document.querySelector('.second-currency');
+    var showResult = document.querySelector('.result-exchange');
+    
+    var amount = document.getElementById('amount').value;
+    var indexFrom = document.getElementById('currencyFrom').value;
+    var indexTo = document.getElementById('currencyTo').value;
+    var result = 0;
+
+    console.log(amount);
+
+    try{
+        if (indexFrom != "" && indexTo != ""){
+            convertCurrency([indexFrom][indexTo]);
+            var exchangeRate = document.getElementById('resultRealTime').value;
+            console.log(exchangeRate);
+            result = amount * exchangeRate;
+            console.log(result);
+        } else {
+            window.alert("Please, enter a value and choose a currencies to calculate result exchange.");
+        }
+    } catch(err) {
+        result = amount * (1 / convertCurrency([indexTo][indexFrom]));
+    }
+
+    showAmount.innerHTML = amount;
+    showBase.textContent = indexFrom + ' = ';
+    showSecond.textContent = indexTo;
+    showResult.textContent = result; 
 }
 
 

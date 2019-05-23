@@ -7,6 +7,14 @@
     --latte-color: #dfd3db;
 }
 
+:root {
+    --cream-color: #E3E8EF;
+    --light-grey-color: #C3D3E5;
+    --blue-color: #7BDDED;
+    --grey-blue-color: #6DA2CE;
+    --dark-blue-color: #2D2D93;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
 html, body, main, h1, h2, h3, div, label {
@@ -22,6 +30,10 @@ label {
 h1, h2, h3, p {
     text-align: center;
     color: darkblue;
+}
+
+input {
+    width: 80px;
 }
 
 .selectCurrencies {
@@ -69,9 +81,9 @@ select {
 }
 
 button {
-    width: 120px;
-    height: 30px;
-    font-size: 15px;
+    width: 100px;
+    height: 22px;
+    font-size: 13px;
 }
 
 #switchBtn {
@@ -98,7 +110,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--light-pink-color);
-    background: linear-gradient(90deg, var(--latte-color) 0%, var(--light-pink-color) 40%, var(--pink-color) 80%, var(--main-dark-color) 100%);
+    /* background-color: var(--light-pink-color); */
+    background: linear-gradient(90deg, var(--white-color) 0%, var(--light-grey-color) 20%, var(--blue-color) 60%, var(--grey-blue-color) 80%, var(--dark-blue-color)100%);
     flex-direction: column;
 }
