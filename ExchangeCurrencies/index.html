@@ -58,11 +58,27 @@
                     <button type="button" onclick="swapSelectedIndexBtn('select[name=\'currencyFrom\']', 'select[name=\'currencyTo\']')" >&#8646;</button>
             </div>
 
+
+            <!-- CHART -->
+
             <div>
-                <div class="chart" id="chartContainer"></div>
-                <div>
-                    <label id="historicalLbl" class="header">Historical exchange chart</label>
+                <div id="chartContainer" class="chartButtons">
                 </div>
+            </div>
+            <div class="buttonsChart">
+                    <button type="button" onclick="chart12hourBtn()">12h</button>
+                    <button type="button" onclick="chart1DayBtn()">1D</button>
+                    <button type="button" onclick="chart1WeekBtn()">1W</button>
+                    <button type="button" onclick="chart1MonthBtn()">1M</button>
+                    <button type="button" onclick="chart1YearBtn()">1Y</button>
+                    <button type="button" onclick="chart2YearBtn()">2Y</button>
+                    <button type="button" onclick="chart5YearBtn()">5Y</button>
+                    <button type="button" onclick="chart10YearBtn()">10Y</button>
+            </div>
+            <div>
+                <!-- <div>
+                    <label id="historicalLbl" class="header">Historical exchange chart</label>
+                </div> -->
             </div>
             
         </div>
@@ -78,6 +94,7 @@
 
     <script type="text/javascript" src="src/index.js"></script>
     <script type="text/javascript" src="src/chart.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     </body>
