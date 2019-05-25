@@ -27,6 +27,12 @@ label {
     font-size: 20px;
 }
 
+.infoLbl {
+    font-size: 18px;;
+    justify-content: center;
+    margin: 0 20px 0 20px;
+}
+
 h1, h2, h3, p {
     text-align: center;
     color: darkblue;
@@ -38,26 +44,14 @@ input {
 
 .selectCurrencies {
     justify-content: space-around;
-    /* align-items: center; */
     display: flex;
     flex-direction: row;
     margin: 50px 70px 50px 70px;
-    /* background-color: red; */
-
-    /* align-content: space-around; */
 }
 
-/* .title {
-    /* color: var(--white-color); */
-    /* solid, dashed, double */
-    /* border-bottom: 4px var(--white-color) double;  */
-    /* padding-bottom: 16px; */
-    /* width: max-content; tyle ile treści to taką ustaw szerokość podkreślenia */
-/* } */ 
-
 #box {
-    width: 900px;
-    height: 700px;
+    width: 1000px;
+    height: 900px;
     margin: 0px auto;
     border: 2px solid gainsboro;
 
@@ -97,33 +91,24 @@ button {
 }
 
 #chartContainer {
-    height: 300px;
+    height: 350px;
     width: 100%;
-    /* display: flex;
-    flex-direction: column; */
-}
-
-.chartButtons {
     display: flex;
     flex-direction: column;
     /* align-items: flex-end; */
     text-align: end;
 }
-/* 
-.chart {
-    display: flex;
-    flex-direction: row;
-} */
 
 .buttonsChart {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    margin: 0 20px 0 20px;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
     height: 40px;
     padding: 40px 0;

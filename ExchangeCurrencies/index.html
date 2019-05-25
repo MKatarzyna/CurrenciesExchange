@@ -41,6 +41,12 @@
                 </div>  
             </div>
 
+            <div>
+                <p class="infoLbl">Remember, you can check data only 5 times per minute. </br>
+                    If you want to check real-time exchange rate or see historical chart, as first you need select currencies in both labels("From"/"to"), then click on "SHOW" button. You can also swap currencies using next button. By the following buttons ("12h"..."10Y") you can change the historical exchange chart range. 
+                </p>
+            </div>
+
             <div class="selectCurrencies">
                 <div>    
                     <label class="header">From: </label>
@@ -54,37 +60,27 @@
                         <option></option>
                     </select>
                 </div>
-                    <button class="calculateBtn" onclick="convertCurrency()">Real-time</button>
+                    <button class="calculateBtn" onclick="convertCurrency()">SHOW</button>
                     <button type="button" onclick="swapSelectedIndexBtn('select[name=\'currencyFrom\']', 'select[name=\'currencyTo\']')" >&#8646;</button>
             </div>
-
-
             <!-- CHART -->
-
             <div>
-                <div id="chartContainer" class="chartButtons">
+                <div>
+                    <div id="chartContainer">
+                    </div>
+                </div></br>
+                <div class="buttonsChart">
+                        <button type="button" onclick="setMode(0)">12h</button>
+                        <button type="button" onclick="setMode(1)">1D</button>
+                        <button type="button" onclick="setMode(2)">1W</button>
+                        <button type="button" onclick="setMode(3)">1M</button>
+                        <button type="button" onclick="setMode(4)">1Y</button>
+                        <button type="button" onclick="setMode(5)">2Y</button>
+                        <button type="button" onclick="setMode(6)">5Y</button>
+                        <button type="button" onclick="setMode(7)">10Y</button>
                 </div>
-            </div>
-            <div class="buttonsChart">
-                    <button type="button" onclick="chart12hourBtn()">12h</button>
-                    <button type="button" onclick="chart1DayBtn()">1D</button>
-                    <button type="button" onclick="chart1WeekBtn()">1W</button>
-                    <button type="button" onclick="chart1MonthBtn()">1M</button>
-                    <button type="button" onclick="chart1YearBtn()">1Y</button>
-                    <button type="button" onclick="chart2YearBtn()">2Y</button>
-                    <button type="button" onclick="chart5YearBtn()">5Y</button>
-                    <button type="button" onclick="chart10YearBtn()">10Y</button>
-            </div>
-            <div>
-                <!-- <div>
-                    <label id="historicalLbl" class="header">Historical exchange chart</label>
-                </div> -->
-            </div>
-            
-        </div>
-        
-
-
+            </div>            
+        </div></br>
         <footer class="footer container-fluid py-4">
             <p class="title">&copy; 2019 | Kainos Exchange Challenge.</p>
             <p>Designed with ♡ by Katarzyna Mural</p>

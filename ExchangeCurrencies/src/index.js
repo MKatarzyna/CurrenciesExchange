@@ -3,7 +3,6 @@ console.log('Show the Exchange Currency! :D');
 const fetchCurrencies = async () => {
     const currencyData = await fetch('https://openexchangerates.org/api/currencies.json?app_id=a0320887920d41d0b1d5013d90770f9c').then(data => data.json());
     // console.log(currencyData);
-
     populateCurrencySelect(currencyData);
 }
 
@@ -13,40 +12,17 @@ const populateCurrencySelect = (currencies) => {
     var selectTo = document.getElementById('currencyTo');
 
     for(row in currencies) {
-        //console.log(row);
-        
         var optionElement = document.createElement('option');
         var optionElementTo = document.createElement('option');
         optionElement.text = row;
         optionElementTo.text = row;
         select.appendChild(optionElement);
         selectTo.appendChild(optionElementTo);
-        
-        // querySelector('.currency-select');
-        // const optionElement = document.createElement('option');
-        // document.getElementById("demo").innerHTML += myObj[x];
     }
-
-    
-    // select = document.querySelector('.currency-select');
-    // const currencyOptions = currencies.map(currency => {
-    //     const optionElement = document.createElement('option');
-    //     console.log(currency);
-    //     // optionElement.value = currency.id;
-    //     // optionElement.text =
-    //     return optionElement;
-    // })  
-    
-    // currencyOptions.forEach(currencyOptions => {
-    //     console.log(currencyOptions);
-    //     select.appendChild(currencyOptions);
-    // })
 }
-
 
 const convertCurrency = async () => {
     var amountInput = document.getElementById('amount').value;
-    // var resultLabel = document.getElementById('resultRealTime');
 
     var CurrencyInputFrom = document.getElementById('currencyFrom').value;
     var CurrencyInputTo = document.getElementById('currencyTo').value;
@@ -70,10 +46,6 @@ const convertCurrency = async () => {
     console.log(exchangeValue);
 
     document.getElementById('resultRealTime').value = exchangeValue;
-    // resultLabel = exchangeValue;
-
-    // [""Realtime Currency Exchange Rate""][""5. Exchange Rate""]
-    // const {url} = result;
     console.log(result);
     renderChart(CurrencyInputFrom, CurrencyInputTo);
 }
@@ -85,11 +57,7 @@ const swapSelectedIndexBtn = (currencyFrom, currencyTo) => {
     document.getElementById('currencyTo').selectedIndex = indexFrom;
 }
 
-
 function exchangeCurrency(event) {
-
-    // event.preventDefault();
-
     var showAmount = document.querySelector('.given-amount');
     var showBase = document.querySelector('.base-currency');
     var showSecond = document.querySelector('.second-currency');
@@ -121,22 +89,5 @@ function exchangeCurrency(event) {
     showSecond.textContent = indexTo;
     showResult.textContent = result; 
 }
-
-
-// const changeCurrencyFrom = () => {
-//     // console.log("I will change currency")
-//     // console.log(event.target.value);
-//     var currency = document.getElementById('currencyFrom').value;
-//     console.log(currency);
-//     convertCurrency(currency);
-// }
-
-// const changeCurrencyTo = () => {
-//     // console.log("I will change currency")
-//     // console.log(event.target.value);
-//     var currency = document.getElementById('currencyTo').value;
-//     console.log(currency);
-//     convertCurrency(currency);
-// }
 
 fetchCurrencies()
