@@ -8,11 +8,18 @@
     <title>Exchange Challenge</title>
 
     <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/video.css">
 </head>
 
     <body>
     <main>
-    </br><h1>Welcome to Exchange Challenge 2019</h1></br>
+        <section class="home" id="home">
+            <video autoplay muted loop id="myVideo">
+                <source src="PexelsVideos3372.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </section>
+    </br><h1 id="title">Welcome to Exchange Challenge 2019</h1></br>
         <div id="box">
         </br><h1>Select exchange currencies</h1>
             <div id="enterValueBox">
@@ -86,6 +93,21 @@
             <p>Designed with ♡ by Katarzyna Mural</p>
         </footer>
     </main>
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+        
+        function myFunction() {
+            if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+            } else {
+            video.pause();
+            btn.innerHTML = "Play";
+            }
+        }
+    </script>
 
 
     <script type="text/javascript" src="src/index.js"></script>
