@@ -1,2 +1,2 @@
 # CurrenciesExchange
-Used technologies: HMTL, CSS, JavaScript, Azure, JSON
+Used technologies: HMTL, CSS, JavaScript, Heroku, JSON
